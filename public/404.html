@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude 学堂</title>
+    <script>
+      // GitHub Pages SPA 兜底：把当前路径存起来，再跳到首页，由 index.html 恢复
+      try {
+        sessionStorage.setItem("academy-redirect", location.pathname + location.search + location.hash);
+      } catch (e) {}
+      location.replace("/claude-academy-zh/");
+    </script>
+  </head>
+  <body></body>
+</html>

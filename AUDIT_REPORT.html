@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Academy 中文镜像 — 最终交付审计报告</title>
+<style>
+  :root {
+    --clay: #d97757;
+    --bg: #fbf9f7;
+    --surface: #ffffff;
+    --text: #191919;
+    --text2: #575653;
+    --border: #e6e2dc;
+    --red: #dc2626;
+    --amber: #d97706;
+    --green: #16a34a;
+    --blue: #2563eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; padding: 24px; }
+  .report { max-width: 1120px; margin: 0 auto; }
+  h1 { font-family: Georgia, serif; font-size: 28px; margin-bottom: 4px; }
+  .meta { color: var(--text2); font-size: 13px; margin-bottom: 28px; }
+  h2 { font-family: Georgia, serif; font-size: 22px; margin: 38px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--clay); }
+  h3 { font-size: 17px; margin: 20px 0 10px; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .badge-red { background: #fef2f2; color: var(--red); border: 1px solid #fecaca; }
+  .badge-amber { background: #fffbeb; color: var(--amber); border: 1px solid #fde68a; }
+  .badge-green { background: #f0fdf4; color: var(--green); border: 1px solid #bbf7d0; }
+  .badge-blue { background: #eff6ff; color: var(--blue); border: 1px solid #bfdbfe; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 14px 0; }
+  .kv { display: grid; grid-template-columns: 200px 1fr; gap: 8px 16px; font-size: 14px; }
+  .kv dt { color: var(--text2); font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 4px; font-size: 13px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); }
+  th { background: #f4f0ec; font-weight: 600; color: var(--text2); }
+  tr:hover td { background: #faf7f4; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; padding: 1px 8px; border-radius: 999px; font-weight: 600; }
+  .pill-ok { background: #f0fdf4; color: var(--green); }
+  .pill-partial { background: #fffbeb; color: var(--amber); }
+  .banner { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid var(--green); border-radius: 10px; padding: 14px 18px; margin: 14px 0; font-size: 14px; }
+  .banner b { color: var(--green); }
+  code { background: #f4f0ec; padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  ul { padding-left: 22px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  .muted { color: var(--text2); font-size: 13px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } .kv { grid-template-columns: 130px 1fr; } }
+</style>
+</head>
+<body>
+<div class="report">
+  <h1>Claude Academy 中文镜像 — 最终交付审计报告</h1>
+  <div class="meta">原站：<code>https://academy.claude.com/</code> ｜ 中文镜像：<code>~/Desktop/claude-academy-zh/</code> ｜ 更新时间：2026-08-21 ｜ 生产构建：<code>npm run build</code> ✓ 通过</div>
+
+  <!-- ============ 总览 ============ -->
+  <h2>一、总览与结论</h2>
+  <div class="grid2">
+    <div class="card">
+      <div class="kv">
+        <dt>在站课程</dt><dd><b>13 门</b>（按需求精简：移除 9 门空白课）</dd>
+        <dt>课时总数</dt><dd><b>134 节</b></dd>
+        <dt>正文填充率</dt><dd><span class="badge badge-green">100%（在站课程）</span></dd>
+        <dt>空白课时</dt><dd><span class="badge badge-green">0 节</span></dd>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kv">
+        <dt>结构 & 配色</dt><dd><span class="badge badge-green">1:1 对齐</span></dd>
+        <dt>数量一致性</dt><dd><span class="badge badge-green">一致</span></dd>
+        <dt>翻译完整度</dt><dd><span class="badge badge-green">13/13 课程完整中文</span></dd>
+        <dt>测验 / 结课页</dt><dd><span class="badge badge-green">已补齐</span></dd>
+      </div>
+    </div>
+  </div>
+  <div class="banner">
+    <b>最终结论：</b>三条规则全部落地 —— ① 在站课程全部有完整中文翻译、结构完整；② 不满足要求的 9 门空白课程已从网站移除（数据与路由一并清理，不再出现空白页）；③ 按要求保留并完整填充了 #7 教学 AI 素养、#1 构建者专题、#9 Claude Code 实战、#13 Agent Skills、#14 Subagents、#15 MCP 高级主题 六门课。全站 13 门课、134 节课时 <b>0 空白</b>，生产构建通过。
+  </div>
+
+  <!-- ============ 交付动作 ============ -->
+  <h2>二、本轮交付动作</h2>
+  <div class="card">
+    <ul>
+      <li><b>移除 9 门空白课程</b>：ai-fluency-for-educators / k-12-educators / nonprofits / pk-12-train-the-trainer / small-businesses / building-with-the-claude-api / claude-platform-101 / claude-with-amazon-bedrock / claude-with-google-cloud-s-vertex-ai —— 从课程库、课程路由、课程详情注册表中全部摘除，杜绝「点击后看不到内容」的体验。</li>
+      <li><b>完整填充 6 门选定课程（52 节）</b>：基于原站逐课抓取英文正文 → 翻译为流畅中文 → 结构化注入（含小节标题、列表、代码块、学习目标、课时时长）；测验课写入中文选择题（含答案解析），结课页写入中文总结。</li>
+      <li><b>补齐存量课程遗漏</b>：claude-cowork（1 节）、ai-capabilities（9 节）中此前空白的「心智模型」小节已按原版内容补齐。</li>
+      <li><b>工程化流水线</b>：本地抓取 → HTML→Markdown 提取 → 中文翻译 → 结构化 JSON → 安全注入脚本（自动转义、保留其余字段），每门课注入后即跑生产构建验证。</li>
+    </ul>
+  </div>
+
+  <!-- ============ 逐课明细 ============ -->
+  <h2>三、在站课程明细（13 门 · 134 节 · 全部填充）</h2>
+  <div class="muted" style="margin-bottom:8px;">状态说明：<span class="pill pill-ok">OK</span> 全部填充（含视频小节 / 测验小节）</div>
+  <table>
+    <thead>
+      <tr><th>课程</th><th>课时数</th><th>状态</th><th>备注</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Claude 101：从入门到精通</td><td class="num">13</td><td><span class="pill pill-ok">OK</span></td><td class="muted">存量完整</td></tr>
+      <tr><td>Claude Cowork 入门指南</td><td class="num">14</td><td><span class="pill pill-ok">OK</span></td><td class="muted">补齐 M365 小节</td></tr>
+      <tr><td>Claude Code 101：智能体编程入门</td><td class="num">13</td><td><span class="pill pill-ok">OK</span></td><td class="muted">存量完整</td></tr>
+      <tr><td>MCP 模型上下文协议入门</td><td class="num">12</td><td><span class="pill pill-ok">OK</span></td><td class="muted">存量完整</td></tr>
+      <tr><td>Claude Code 实战演练 <b>#9</b></td><td class="num">10</td><td><span class="pill pill-ok">OK</span></td><td class="muted">本轮新填 · 含测验</td></tr>
+      <tr><td>Agent Skills 智能体技能入门 <b>#13</b></td><td class="num">7</td><td><span class="pill pill-ok">OK</span></td><td class="muted">本轮新填</td></tr>
+      <tr><td>Subagents 子智能体入门 <b>#14</b></td><td class="num">5</td><td><span class="pill pill-ok">OK</span></td><td class="muted">本轮新填</td></tr>
+      <tr><td>MCP 高级主题 <b>#15</b></td><td class="num">12</td><td><span class="pill pill-ok">OK</span></td><td class="muted">本轮新填 · 含测验</td></tr>
+      <tr><td>AI 素养：4D 协作框架基础</td><td class="num">13</td><td><span class="pill pill-ok">OK</span></td><td class="muted">存量完整</td></tr>
+      <tr><td>AI 能力与边界</td><td class="num">11</td><td><span class="pill pill-ok">OK</span></td><td class="muted">补齐 9 节心智模型小节</td></tr>
+      <tr><td>AI 素养：构建者专题 <b>#1</b></td><td class="num">10</td><td><span class="pill pill-ok">OK</span></td><td class="muted">本轮新填 · 含测验</td></tr>
+      <tr><td>AI 素养：学生专题</td><td class="num">6</td><td><span class="pill pill-ok">OK</span></td><td class="muted">先行试点（含视频）</td></tr>
+      <tr><td>教学 AI 素养指南 <b>#7</b></td><td class="num">8</td><td><span class="pill pill-ok">OK</span></td><td class="muted">本轮新填 · 含测验</td></tr>
+      <tr style="font-weight:700;background:#f4f0ec;"><td>合计</td><td class="num">134</td><td><span class="pill pill-ok">100%</span></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ============ 已验证 ============ -->
+  <h2>四、验证结果</h2>
+  <div class="card">
+    <ul>
+      <li><b>生产构建</b>：<code>npm run build</code>（tsc + vite）通过，0 报错。</li>
+      <li><b>空白扫描</b>：13 门在站课程 134 节中，无任何空白正文小节；students 的 5 个视频小节均带 <code>videoData</code>，属正常结构。</li>
+      <li><b>本地预览</b>：开发服务器 <code>http://localhost:5174/</code> 运行中，可直接查看效果。</li>
+      <li><b>已移除课程</b>：9 门空白课的数据文件保留在 <code>src/data/lessons/</code>（不再被任何路由引用），若日后需要可随时重新启用并填充。</li>
+    </ul>
+  </div>
+
+  <p class="muted" style="margin-top:24px;">报告生成：WorkBuddy ｜ 数据基于 <code>src/data/lessons/*.ts</code> 与 <code>src/data/courses.ts</code> 的静态解析（build 验证通过）。</p>
+</div>
+</body>
+</html>

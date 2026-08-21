@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude 学堂 · Claude 使用手册及 AI 学习方法</title>
+    <meta name="description" content="Claude 学堂 —— Claude 使用手册及 AI 学习方法，Anthropic 官方 Academy 中文版。13 门系统课程、134 节课时、37 篇速查、24 个实战案例。" />
+    <link rel="icon" type="image/svg+xml" href="https://academy.claude.com/favicon.svg" />
+    <script>
+      // GitHub Pages SPA 刷新兜底：404 页会把原路径存入 sessionStorage，这里恢复
+      (function () {
+        try {
+          var r = sessionStorage.getItem("academy-redirect");
+          if (r) {
+            sessionStorage.removeItem("academy-redirect");
+            history.replaceState(null, "", r);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      (function() {
+        try {
+          var p = localStorage.getItem("academy-theme");
+          var d = p === "dark" || (p !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.setAttribute("data-mode", d ? "dark" : "light");
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body class="bg-surface-0 text-primary min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
