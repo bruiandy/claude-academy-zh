@@ -393,7 +393,7 @@ export const HomePage: React.FC = () => {
           {/* 微信 */}
           <div className="flex items-center gap-5 md:justify-end">
             <img
-              src="/wechat-qr.jpg"
+              src={`${import.meta.env.BASE_URL}wechat-qr.jpg`}
               alt="微信二维码"
               className="w-32 h-32 md:w-40 md:h-40 rounded-xl border border-border object-cover shrink-0"
             />
